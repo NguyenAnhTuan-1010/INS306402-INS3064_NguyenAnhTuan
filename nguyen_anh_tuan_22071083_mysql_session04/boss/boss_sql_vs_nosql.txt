@@ -1,0 +1,29 @@
+Boss Fight: SQL vs NoSQL Decision
+Scenario 1: High-velocity social media feed
+Lựa chọn: NoSQL (ví dụ: MongoDB, Cassandra)
+
+Lý do:
+
+Schema Flexibility (Tính linh hoạt): Các bài đăng trên mạng xã hội rất đa dạng (chỉ text, có ảnh, video, poll, hoặc các tính năng mới trong tương lai). NoSQL cho phép lưu trữ các cấu trúc không đồng nhất mà không cần thay đổi schema phức tạp.
+
+Horizontal Scalability (Mở rộng quy mô): Với hàng triệu người dùng truy cập cùng lúc, NoSQL hỗ trợ mở rộng theo chiều ngang (thêm nhiều máy chủ rẻ tiền) tốt hơn so với SQL vốn thường chỉ mở rộng theo chiều dọc (nâng cấp phần cứng máy chủ hiện có).
+
+Performance (Hiệu năng): NoSQL tối ưu hóa cho tốc độ ghi và đọc cực nhanh các dữ liệu dạng document hoặc key-value, đáp ứng được độ trễ thấp cần thiết cho luồng tin (feed) trực tuyến.
+
+Scenario 2: Secure bank ledger (Sổ cái ngân hàng)
+Lựa chọn: SQL (ví dụ: PostgreSQL, MySQL)
+
+Lý do:
+
+ACID Compliance: Đây là yếu tố sống còn của ngành tài chính. SQL đảm bảo tính Atomic (Giao dịch hoàn thành 100% hoặc không gì cả), ngăn chặn việc tiền bị trừ ở tài khoản này nhưng chưa kịp cộng vào tài khoản kia.
+
+Data Integrity (Toàn vẹn dữ liệu): Các ràng buộc khóa ngoại (Foreign Keys) và kiểm tra (Check constraints) mà chúng ta đã làm ở các bài trước giúp đảm bảo không bao giờ có số dư âm hoặc các bản ghi mồ côi.
+
+Structured Data (Dữ liệu có cấu trúc): Thông tin ngân hàng (số tài khoản, tên, số dư) có cấu trúc cực kỳ ổn định và chặt chẽ, rất phù hợp với mô hình dạng bảng của SQL để tối ưu hóa việc truy vấn báo cáo.
+
+Tổng kết tiêu chí (Acceptance Criteria)
+ACID: Đã nhấn mạnh trong kịch bản Ngân hàng.
+
+Scalability: Đã phân tích Horizontal (NoSQL) và Vertical (SQL).
+
+Schema Flexibility: Đã áp dụng cho mạng xã hội.
